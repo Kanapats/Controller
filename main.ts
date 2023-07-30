@@ -22,18 +22,18 @@ basic.forever(function () {
     value = msg.split(",")
     xaxis = parseFloat(value[0])
     yaxis = parseFloat(value[1])
-    if (xaxis >= 395) {
-        currentX += 3
+    if (xaxis > 355) {
+        currentX += -1
         PTKidsBIT.servoWrite2(Servo_Write2.S0, Math.constrain(currentX, 5, 175))
-    } else if (xaxis <= 245) {
-        currentX += -3
+    } else if (xaxis < 285) {
+        currentX += 1
         PTKidsBIT.servoWrite2(Servo_Write2.S0, Math.constrain(currentX, 5, 175))
     }
-    if (yaxis >= 315) {
-        currentY += 3
+    if (yaxis > 275) {
+        currentY += 1
         PTKidsBIT.servoWrite2(Servo_Write2.S1, Math.constrain(currentY, 35, 170))
-    } else if (yaxis <= 165) {
-        currentY += -3
+    } else if (yaxis < 205) {
+        currentY += -1
         PTKidsBIT.servoWrite2(Servo_Write2.S1, Math.constrain(currentY, 35, 170))
     }
 })
